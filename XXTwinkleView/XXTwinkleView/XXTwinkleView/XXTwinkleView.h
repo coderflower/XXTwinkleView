@@ -13,6 +13,15 @@
  */
 @interface XXTwinkleView : UIView
 
+
+/**
+ 自定义构造方法
+
+ @param color 闪烁点的颜色
+
+ @return XXTwinkleView
+ */
+- (instancetype)initWithColor:(UIColor *)color;
 /**
  开始呼吸动画
  */

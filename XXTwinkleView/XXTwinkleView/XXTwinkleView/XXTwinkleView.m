@@ -7,7 +7,7 @@
 //
 
 #import "XXTwinkleView.h"
-static CGFloat const flashWidth = 30;
+static CGFloat const twinkleWidth = 30;
 static CGFloat const centerWidth = 8;
 @interface XXTwinkleView ()
 /** 闪动的 view */
@@ -16,6 +16,8 @@ static CGFloat const centerWidth = 8;
 @property(nonatomic, strong) UIView *centerView;
 /** 动画组 */
 @property(nonatomic, strong) CAAnimationGroup * groups;
+/** 闪烁的点颜色 */
+@property(nonatomic, strong) UIColor *twinkleColor;
 @end
 @implementation XXTwinkleView
 
@@ -26,17 +28,24 @@ static CGFloat const centerWidth = 8;
     return self;
 }
 
+- (instancetype)initWithColor:(UIColor *)color {
+    if (self = [super init]) {
+        self.twinkleColor = color;
+    }
+    return self;
+}
+
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
-//    [self startFlashAnimation];
+    [self startFlashAnimation];
 }
 
 - (UIView *)twinkleView {
     if (!_twinkleView) {
         _twinkleView =  [[UIView alloc] init];
         [self addSubview:_twinkleView];
-        _twinkleView.backgroundColor = [UIColor whiteColor];
-        _twinkleView.layer.cornerRadius = flashWidth * 0.5;
+        _twinkleView.backgroundColor = self.twinkleColor? self.twinkleColor : [UIColor whiteColor];
+        _twinkleView.layer.cornerRadius = twinkleWidth * 0.5;
         _twinkleView.alpha = 0;
     }
     return _twinkleView;
@@ -46,7 +55,7 @@ static CGFloat const centerWidth = 8;
     if (!_centerView) {
         _centerView =  [[UIView alloc] init];
         [self addSubview:_centerView];
-        _centerView.backgroundColor = [UIColor whiteColor];
+        _centerView.backgroundColor = self.twinkleColor? self.twinkleColor : [UIColor whiteColor];
         _centerView.layer.cornerRadius = centerWidth * 0.5;
     }
     return _centerView;
@@ -81,7 +90,7 @@ static CGFloat const centerWidth = 8;
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
     self.centerView.frame = CGRectMake((width - centerWidth) * 0.5, (height - centerWidth) * 0.5, centerWidth, centerWidth);
-    self.twinkleView.frame = CGRectMake((width - flashWidth) * 0.5, (height - flashWidth) * 0.5, flashWidth, flashWidth);
+    self.twinkleView.frame = CGRectMake((width - twinkleWidth) * 0.5, (height - twinkleWidth) * 0.5, twinkleWidth, twinkleWidth);
 }
 
 /**

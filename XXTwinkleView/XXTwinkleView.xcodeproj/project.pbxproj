@@ -17,6 +17,7 @@
 		0405CDA71DABCD0B0002E07D /* XXTwinkleViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDA61DABCD0B0002E07D /* XXTwinkleViewUITests.m */; };
 		0405CDB71DABCD780002E07D /* XXTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDB61DABCD780002E07D /* XXTwinkleView.m */; };
 		0405CDBA1DABCF540002E07D /* XXFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDB91DABCF540002E07D /* XXFlashView.m */; };
+		830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		0405CDB61DABCD780002E07D /* XXTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTwinkleView.m; sourceTree = "<group>"; };
 		0405CDB81DABCF540002E07D /* XXFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXFlashView.h; sourceTree = "<group>"; };
 		0405CDB91DABCF540002E07D /* XXFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXFlashView.m; sourceTree = "<group>"; };
+		830C67FD1DABF00A000A3A9A /* UIView+XXAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXAnimation.h"; sourceTree = "<group>"; };
+		830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 		0405CD801DABCD0A0002E07D /* XXTwinkleView */ = {
 			isa = PBXGroup;
 			children = (
+				830C67FD1DABF00A000A3A9A /* UIView+XXAnimation.h */,
+				830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */,
 				0405CDB41DABCD6A0002E07D /* XXTwinkleView */,
 				0405CD841DABCD0A0002E07D /* AppDelegate.h */,
 				0405CD851DABCD0A0002E07D /* AppDelegate.m */,
@@ -292,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0405CDBA1DABCF540002E07D /* XXFlashView.m in Sources */,
+				830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */,
 				0405CD891DABCD0A0002E07D /* ViewController.m in Sources */,
 				0405CD861DABCD0A0002E07D /* AppDelegate.m in Sources */,
 				0405CD831DABCD0A0002E07D /* main.m in Sources */,
@@ -527,6 +533,7 @@
 				0405CDAD1DABCD0B0002E07D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0405CDAE1DABCD0B0002E07D /* Build configuration list for PBXNativeTarget "XXTwinkleViewTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +542,7 @@
 				0405CDB01DABCD0B0002E07D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0405CDB11DABCD0B0002E07D /* Build configuration list for PBXNativeTarget "XXTwinkleViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +551,7 @@
 				0405CDB31DABCD0B0002E07D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

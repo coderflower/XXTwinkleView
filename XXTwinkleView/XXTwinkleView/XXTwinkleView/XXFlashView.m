@@ -29,6 +29,7 @@ static CGFloat const centerWidth = 10;
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
     [self begigFlashAnimation];
+    [self prepareTimer];
 }
 
 - (UIView *)flashView {
