@@ -17,6 +17,8 @@
 		0405CDA71DABCD0B0002E07D /* XXTwinkleViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDA61DABCD0B0002E07D /* XXTwinkleViewUITests.m */; };
 		0405CDB71DABCD780002E07D /* XXTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDB61DABCD780002E07D /* XXTwinkleView.m */; };
 		0405CDBA1DABCF540002E07D /* XXFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDB91DABCF540002E07D /* XXFlashView.m */; };
+		041557481DAFA23E00EBC10F /* XXMarkTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */; };
+		0415574B1DAFA53000EBC10F /* UIView+XXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */; };
 		830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,10 @@
 		0405CDB61DABCD780002E07D /* XXTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTwinkleView.m; sourceTree = "<group>"; };
 		0405CDB81DABCF540002E07D /* XXFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXFlashView.h; sourceTree = "<group>"; };
 		0405CDB91DABCF540002E07D /* XXFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXFlashView.m; sourceTree = "<group>"; };
+		041557461DAFA23D00EBC10F /* XXMarkTwinkleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXMarkTwinkleView.h; sourceTree = "<group>"; };
+		041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXMarkTwinkleView.m; sourceTree = "<group>"; };
+		041557491DAFA53000EBC10F /* UIView+XXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXFrame.h"; sourceTree = "<group>"; };
+		0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXFrame.m"; sourceTree = "<group>"; };
 		830C67FD1DABF00A000A3A9A /* UIView+XXAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXAnimation.h"; sourceTree = "<group>"; };
 		830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +116,8 @@
 		0405CD801DABCD0A0002E07D /* XXTwinkleView */ = {
 			isa = PBXGroup;
 			children = (
+				041557491DAFA53000EBC10F /* UIView+XXFrame.h */,
+				0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */,
 				830C67FD1DABF00A000A3A9A /* UIView+XXAnimation.h */,
 				830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */,
 				0405CDB41DABCD6A0002E07D /* XXTwinkleView */,
@@ -159,6 +167,8 @@
 				0405CDB61DABCD780002E07D /* XXTwinkleView.m */,
 				0405CDB81DABCF540002E07D /* XXFlashView.h */,
 				0405CDB91DABCF540002E07D /* XXFlashView.m */,
+				041557461DAFA23D00EBC10F /* XXMarkTwinkleView.h */,
+				041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */,
 			);
 			path = XXTwinkleView;
 			sourceTree = "<group>";
@@ -297,6 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0405CDBA1DABCF540002E07D /* XXFlashView.m in Sources */,
+				041557481DAFA23E00EBC10F /* XXMarkTwinkleView.m in Sources */,
+				0415574B1DAFA53000EBC10F /* UIView+XXFrame.m in Sources */,
 				830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */,
 				0405CD891DABCD0A0002E07D /* ViewController.m in Sources */,
 				0405CD861DABCD0A0002E07D /* AppDelegate.m in Sources */,

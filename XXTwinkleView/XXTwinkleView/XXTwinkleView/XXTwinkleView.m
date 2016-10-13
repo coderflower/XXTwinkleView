@@ -7,13 +7,21 @@
 //
 
 #import "XXTwinkleView.h"
-static CGFloat const twinkleWidth = 30;
-static CGFloat const centerWidth = 8;
+//static CGFloat const twinkleWidth = 30;
+//static CGFloat const centerWidth = 8;
 @interface XXTwinkleView ()
 /** 闪动的 view */
 @property(nonatomic, strong) UIView *twinkleView;
 /** 占位的 view */
 @property(nonatomic, strong) UIView *centerView;
+/** 边框 */
+@property(nonatomic, strong) UIView *edgeView;
+/** 边框颜色 */
+@property(nonatomic, strong) UIColor *edgeColor;
+/** 边框宽度 */
+@property(nonatomic, assign) CGFloat centerWidth;
+/** 边框宽度 */
+@property(nonatomic, assign) CGFloat edgeWidth;
 /** 动画组 */
 @property(nonatomic, strong) CAAnimationGroup * groups;
 /** 闪烁的点颜色 */
@@ -21,34 +29,41 @@ static CGFloat const centerWidth = 8;
 @end
 @implementation XXTwinkleView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor clearColor];
+- (instancetype)initWithColor:(UIColor *)color edgeColor:(UIColor *)edgeColor circleWidth:(CGFloat)circleWidth edgeWidth:(CGFloat)edgeWidth {
+    if (self = [super init]) {
+        self.twinkleColor = color;
+        self.edgeColor = edgeColor;
+        self.centerWidth = circleWidth;
+        self.edgeWidth = circleWidth + edgeWidth;
     }
     return self;
 }
-
-- (instancetype)initWithColor:(UIColor *)color {
-    if (self = [super init]) {
-        self.twinkleColor = color;
-    }
-    return self;
++ (instancetype)twinkleViewWithColor:(UIColor *)color edgeColor:(UIColor *)edgeColor circleWidth:(CGFloat)circleWidth edgeWidth:(CGFloat)edgeWidth {
+    return [[self alloc]initWithColor:color edgeColor:edgeColor circleWidth:circleWidth edgeWidth:edgeWidth];
 }
 
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
-    [self startFlashAnimation];
+    [self startAnimation];
 }
 
 - (UIView *)twinkleView {
     if (!_twinkleView) {
         _twinkleView =  [[UIView alloc] init];
         [self addSubview:_twinkleView];
-        _twinkleView.backgroundColor = self.twinkleColor? self.twinkleColor : [UIColor whiteColor];
-        _twinkleView.layer.cornerRadius = twinkleWidth * 0.5;
+        _twinkleView.backgroundColor = self.edgeColor;
         _twinkleView.alpha = 0;
     }
     return _twinkleView;
+}
+
+- (UIView *)edgeView {
+    if (!_edgeView) {
+        _edgeView =  [[UIView alloc] init];
+        [self addSubview:_edgeView];
+        _edgeView.backgroundColor = self.edgeColor;
+    }
+    return _edgeView;
 }
 
 - (UIView *)centerView {
@@ -56,7 +71,7 @@ static CGFloat const centerWidth = 8;
         _centerView =  [[UIView alloc] init];
         [self addSubview:_centerView];
         _centerView.backgroundColor = self.twinkleColor? self.twinkleColor : [UIColor whiteColor];
-        _centerView.layer.cornerRadius = centerWidth * 0.5;
+        
     }
     return _centerView;
 }
@@ -89,21 +104,28 @@ static CGFloat const centerWidth = 8;
     [super layoutSubviews];
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
-    self.centerView.frame = CGRectMake((width - centerWidth) * 0.5, (height - centerWidth) * 0.5, centerWidth, centerWidth);
-    self.twinkleView.frame = CGRectMake((width - twinkleWidth) * 0.5, (height - twinkleWidth) * 0.5, twinkleWidth, twinkleWidth);
+    self.edgeView.frame = CGRectMake((width - self.edgeWidth) * 0.5, (height - self.edgeWidth) * 0.5, self.edgeWidth, self.edgeWidth);
+    self.twinkleView.frame = self.bounds;
+    self.centerView.frame = CGRectMake((width - self.centerWidth) * 0.5, (height - self.centerWidth) * 0.5, self.centerWidth, self.centerWidth);
+    self.twinkleView.layer.cornerRadius = width * 0.5;
+    self.edgeView.layer.cornerRadius = self.edgeWidth * 0.5;
+    self.centerView.layer.cornerRadius = self.centerWidth * 0.5;
 }
 
 /**
  开始呼吸动画
  */
-- (void)startFlashAnimation {
+- (void)startAnimation {
      [self.twinkleView.layer addAnimation:self.groups forKey:@"groups"];
 }
 
 /**
  结束呼吸动画
  */
-- (void)stopFlashAnimation {
+- (void)stopAnimation {
     [self.twinkleView.layer removeAllAnimations];
 }
 @end
+
+
+

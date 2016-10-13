@@ -13,22 +13,26 @@
  */
 @interface XXTwinkleView : UIView
 
-
 /**
- 自定义构造方法
+ 便利构造方法
 
- @param color 闪烁点的颜色
+ @param color       中间原点颜色
+ @param edgeColor   边框颜色
+ @param circleWidth 中间原点直径
+ @param edgeWidth   边框宽度
 
- @return XXTwinkleView
+ @return XXTwinkleView 对象
  */
-- (instancetype)initWithColor:(UIColor *)color;
+- (instancetype)initWithColor:(UIColor *)color edgeColor:(UIColor *)edgeColor circleWidth:(CGFloat)circleWidth edgeWidth:(CGFloat)edgeWidth ;
+
++ (instancetype)twinkleViewWithColor:(UIColor *)color edgeColor:(UIColor *)edgeColor circleWidth:(CGFloat)circleWidth edgeWidth:(CGFloat)edgeWidth ;
 /**
  开始呼吸动画
  */
-- (void)startFlashAnimation;
+- (void)startAnimation;
 
 /**
  结束呼吸动画
  */
-- (void)stopFlashAnimation;
+- (void)stopAnimation;
 @end
