@@ -7,8 +7,6 @@
 //
 
 #import "XXTwinkleView.h"
-//static CGFloat const twinkleWidth = 30;
-//static CGFloat const centerWidth = 8;
 @interface XXTwinkleView ()
 /** 闪动的 view */
 @property(nonatomic, strong) UIView *twinkleView;

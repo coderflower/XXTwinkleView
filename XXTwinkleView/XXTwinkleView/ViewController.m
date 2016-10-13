@@ -21,17 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.twinkleView = [[XXTwinkleView alloc]initWithColor:[UIColor redColor] edgeColor:[UIColor whiteColor] circleWidth:8 edgeWidth:2];
-    self.twinkleView.frame = CGRectMake(120, 360, 30, 30);
-    [self.view addSubview:self.twinkleView];
+    XXMarkTwinkleView *markView1 = [[XXMarkTwinkleView alloc]initWithTwinkleView:self.twinkleView showInRight:NO];
+    markView1.title = @"波波头";
+    // 宽度自适应不需要传宽度
+    markView1.frame = CGRectMake(120, 360, 0, 30);
+    [self.view addSubview:markView1];
+    
     
     self.markView = [XXMarkTwinkleView markViewWithTitle:@"韩式波波头" showInRight: YES];
-    self.markView.frame = CGRectMake(130, 200, 0, 30);
-    self.markView.edgeColor = [UIColor yellowColor];
+    self.markView.frame = CGRectMake(230, 320, 0, 30);
+    self.markView.textColor = [UIColor redColor];
     [self.view addSubview:self.markView];
     
    XXMarkTwinkleView * view = [XXMarkTwinkleView markViewWithTitle:@"梨花烫" showInRight: NO];
-    view.edgeWidth = 1;
-    view.edgeColor = [UIColor whiteColor];
     view.frame = CGRectMake(120, 260, 0, 30);
     [self.view addSubview:view];
     
@@ -45,13 +47,13 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)beginAnimation:(id)sender {
-    [self.twinkleView startAnimation];
+    [self.markView startAnimation];
     
     [self.flashView startFlashAnimation];
 }
 
 - (IBAction)stopAnimation:(id)sender {
-    [self.twinkleView stopAnimation];
+    [self.markView stopAnimation];
     [self.flashView stopFlashAnimation];
 }
 
