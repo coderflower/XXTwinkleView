@@ -38,7 +38,8 @@ static CGFloat const kContentMargin = 5;
 @property(nonatomic, strong) NSString *title;
 /** 是否显示在右边 */
 @property(nonatomic, assign, getter=isShowInRight) BOOL showInRight;
-
+/** 标签类型 */
+@property(nonatomic, assign) TitleType type;
 @end
 
 @implementation XXTwinkleView
@@ -69,16 +70,27 @@ static CGFloat const kContentMargin = 5;
 
 #pragma mark -
 #pragma mark - =============== 逻辑事件 ===============
-- (void)setTitle:(NSString *)title showInRight:(BOOL)isShowInRight {
-    
+
+//- (void)setTitle:(NSString *)title showInRight:(BOOL)isShowInRight {
+//    
+//    self.label.text = title;
+//    _title = title;
+//    [self.label sizeToFit];
+//    [self addSubview:self.label];
+//    _showInRight = isShowInRight;
+//    // 强制布局
+//    [self layoutIfNeeded];
+//}
+- (void)setTitle:(NSString *)title titleType:(TitleType)type  {
     self.label.text = title;
-    _title = title;
     [self.label sizeToFit];
+    _title = title;
     [self addSubview:self.label];
-    _showInRight = isShowInRight;
+    self.type = type;
     // 强制布局
     [self layoutIfNeeded];
 }
+
 - (void)tagLableClick:(UITapGestureRecognizer *)tap {
     
     NSLog(@"%@",self.title);
@@ -235,7 +247,7 @@ static CGFloat const kContentMargin = 5;
         self.twinkleView.cf_height = kTwinkleWidth;
         self.twinkleView.cf_y = (self.cf_height -kTwinkleWidth) * 0.5;
         // 标签显示在右边
-        if (_showInRight) {
+        if (self.type == kTitleRight) {
             self.centerView.cf_x = -self.centerWidth * 0.5;
             self.edgeView.cf_x = -self.edgeWidth * 0.5;
             self.twinkleView.cf_x = -kTwinkleWidth * 0.5;

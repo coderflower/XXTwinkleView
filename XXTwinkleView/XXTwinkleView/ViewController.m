@@ -20,18 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIView *blueView = [[UIView alloc]initWithFrame:CGRectMake(120, 360, 100, 320)];
-    blueView.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:blueView];
+//    UIView *blueView = [[UIView alloc]initWithFrame:CGRectMake(120, 360, 100, 30)];
+//    blueView.backgroundColor = [UIColor blueColor];
+//    [self.view addSubview:blueView];
+    
     self.twinkleView = [[XXTwinkleView alloc]initWithColor:[UIColor redColor] edgeColor:[UIColor whiteColor] circleWidth:8 edgeWidth:2];
-
-    [self.twinkleView setTitle:@"波波头" showInRight:YES];
-    NSLog(@"%@",self.twinkleView.title);
+    [self.twinkleView setTitle:@"波波头" titleType:kTitleRight];
     self.twinkleView.frame = CGRectMake(120, 360, 0, 30);
     [self.view addSubview:self.twinkleView];
     
     XXTwinkleView *tmp =  [[XXTwinkleView alloc]initWithColor:[UIColor redColor] edgeColor:[UIColor whiteColor] circleWidth:8 edgeWidth:2];
-    [tmp setTitle:@"梨花烫" showInRight:NO];
+    [tmp setTitle:@"梨花烫" titleType:kTitleLeft];
     tmp.frame = CGRectMake(120, 360, 0, 30);
     [self.view addSubview:tmp];
     

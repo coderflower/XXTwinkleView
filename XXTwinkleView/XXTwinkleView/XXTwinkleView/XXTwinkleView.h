@@ -24,6 +24,11 @@
  使用核心动画动画组实现的呼吸灯动画 
  可选需不要显示标签
  */
+
+typedef NS_ENUM(NSUInteger, TitleType) {
+    kTitleLeft,
+    kTitleRight,
+};
 @interface XXTwinkleView : UIView
 /** 标签标题 必须先添加标签才有值*/
 @property(nonatomic, strong, readonly) NSString *title;
@@ -70,11 +75,11 @@
 /**
  设置标签
 
- @param title         标签标题
- @param isShowInRight 是否显示在右边
+ @param title 标签标题
+ @param type  标签类型
  */
-- (void)setTitle:(NSString *)title
-     showInRight:(BOOL)isShowInRight ;
+- (void)setTitle:(NSString *)title titleType:(TitleType)type ;
+
 
 /**
  开始呼吸动画
