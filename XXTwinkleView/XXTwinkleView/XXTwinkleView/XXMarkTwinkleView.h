@@ -19,6 +19,7 @@
 @property(nonatomic, assign) CGFloat edgeWidth;
 /** 标签名 */
 @property(nonatomic, strong) NSString *title;
+
 /**
  快速创建 XXMarkTwinkleView
 
@@ -28,7 +29,6 @@
  @return XXMarkTwinkleView
  */
 + (instancetype)markViewWithTitle:(NSString *)title showInRight:(BOOL) isShowInRight;
-
 
 /**
   根据 twinkleView 快速创建 markView
@@ -40,6 +40,7 @@
  */
 - (instancetype)initWithTwinkleView:(XXTwinkleView *)twinkleView showInRight:(BOOL) isShowInRight;
 
+- (void)setTwinkleView:(XXTwinkleView *)twinkleView showInRight:(BOOL)isShowInRight ;
 /**
  开始动画
  */

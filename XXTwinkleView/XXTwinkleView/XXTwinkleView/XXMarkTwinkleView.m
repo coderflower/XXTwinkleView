@@ -16,13 +16,12 @@ static CGFloat const kLabelAdditionalWidth = 22;
 // 原点与标签间距
 static CGFloat const kContentMargin = 0;
 @interface XXMarkTwinkleView ()
-/** XXTwinkleView */
-@property(nonatomic, strong) XXTwinkleView *twinkleView;
 /** 是否显示在右边 */
 @property(nonatomic, assign, getter=isShowInRight)  BOOL showInRight;
 /**  标签 */
 @property(nonatomic, strong) UILabel *tagLable;
-
+/** XXTwinkleView */
+@property(nonatomic, strong) XXTwinkleView *twinkleView;
 @end
 @implementation XXMarkTwinkleView
 
@@ -36,12 +35,13 @@ static CGFloat const kContentMargin = 0;
 - (instancetype)initWithTwinkleView:(XXTwinkleView *)twinkleView showInRight:(BOOL)isShowInRight {
     if (self = [super init]) {
         _twinkleView = twinkleView;
+        self.showInRight = isShowInRight;
         [self addSubview:_twinkleView];
         [self layoutIfNeeded];
-        self.showInRight = isShowInRight;
     }
     return  self;
 }
+
 
 - (void)startAnimation {
     [self.twinkleView startAnimation];
@@ -50,7 +50,12 @@ static CGFloat const kContentMargin = 0;
 - (void)stopAnimation {
     [self.twinkleView stopAnimation];
 }
-
+- (void)setTwinkleView:(XXTwinkleView *)twinkleView showInRight:(BOOL)isShowInRight {
+    _twinkleView = twinkleView;
+    self.showInRight = isShowInRight;
+    [self addSubview:_twinkleView];
+    [self layoutIfNeeded];
+}
 #pragma mark -
 #pragma mark - =============== setter方法 ===============
 - (void)setTitle:(NSString *)title {
@@ -116,9 +121,9 @@ static CGFloat const kContentMargin = 0;
  */
 - (void)layoutSubviews {
     [super layoutSubviews];
-    // 下移一半以呼吸灯控件中心点Y作为坐标原点
+    // 上移一半以呼吸灯控件中心点Y作为坐标原点
     CGRect tmpBounds = self.bounds;
-    tmpBounds.origin.y -= self.cf_height * 0.5;
+    tmpBounds.origin.y -= self.cf_height;
     self.bounds = tmpBounds;
     // 根据标签显示的位置,布局子控件
     if (self.isShowInRight) {

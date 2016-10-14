@@ -20,13 +20,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView *blueView = [[UIView alloc]initWithFrame:CGRectMake(120, 360, 100, 320)];
+    blueView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:blueView];
     self.twinkleView = [[XXTwinkleView alloc]initWithColor:[UIColor redColor] edgeColor:[UIColor whiteColor] circleWidth:8 edgeWidth:2];
-    XXMarkTwinkleView *markView1 = [[XXMarkTwinkleView alloc]initWithTwinkleView:self.twinkleView showInRight:NO];
-    markView1.title = @"波波头";
-    // 宽度自适应不需要传宽度
-    markView1.frame = CGRectMake(120, 360, 0, 30);
-    [self.view addSubview:markView1];
+
+    [self.twinkleView setTitle:@"波波头" showInRight:YES];
+    NSLog(@"%@",self.twinkleView.title);
+    self.twinkleView.frame = CGRectMake(120, 360, 0, 30);
+    [self.view addSubview:self.twinkleView];
     
+    XXTwinkleView *tmp =  [[XXTwinkleView alloc]initWithColor:[UIColor redColor] edgeColor:[UIColor whiteColor] circleWidth:8 edgeWidth:2];
+    [tmp setTitle:@"梨花烫" showInRight:NO];
+    tmp.frame = CGRectMake(120, 360, 0, 30);
+    [self.view addSubview:tmp];
     
     self.markView = [XXMarkTwinkleView markViewWithTitle:@"韩式波波头" showInRight: YES];
     self.markView.frame = CGRectMake(230, 320, 0, 30);
