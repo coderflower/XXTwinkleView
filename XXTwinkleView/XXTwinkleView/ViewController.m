@@ -10,6 +10,8 @@
 #import "XXTwinkleView.h"
 #import "XXFlashView.h"
 #import "XXMarkTwinkleView.h"
+
+#import "UIViewController+XXCommonNavBar.h"
 @interface ViewController ()
 @property(nonatomic, strong) XXTwinkleView *twinkleView;
 @property(nonatomic, strong) XXMarkTwinkleView *markView;
@@ -23,6 +25,13 @@
 //    UIView *blueView = [[UIView alloc]initWithFrame:CGRectMake(120, 360, 100, 30)];
 //    blueView.backgroundColor = [UIColor blueColor];
 //    [self.view addSubview:blueView];
+   XXCommonNavigationBar * bar = [self cf_commonNavigationBarShowBackItem:NO];
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 40, 40);
+    [btn setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(rightClick) forControlEvents:UIControlEventTouchUpInside];
+    [bar setRightButton:btn];
+
     
     self.twinkleView = [[XXTwinkleView alloc]initWithColor:[UIColor redColor] edgeColor:[UIColor whiteColor] circleWidth:8 edgeWidth:2];
     [self.twinkleView setTitle:@"波波头" titleType:kTitleRight];
@@ -45,8 +54,42 @@
     
     self.flashView = [[XXFlashView alloc]initWithFrame:CGRectMake(120, 400, 40, 40)];
     [self.view addSubview:self.flashView];
+    
+    
+    [self setCommonNavBar];
 }
 
+- (void)rightClick {
+    
+    ViewController * vc = [[ViewController alloc]init];
+    vc.view.backgroundColor = [UIColor blueColor];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+- (void)setCommonNavBar {
+//    XXCommonNavigationBar * bar = [[XXCommonNavigationBar alloc]initWithFrame:self.navigationController.navigationBar.frame];
+//    [self.view addSubview:bar];
+//    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:nil];
+    
+//    XXCommonNavigationBar * bar = [XXCommonNavigationBar barBackItemShow:YES];
+//    bar.title = @"呼吸灯动画";
+//    
+//    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button.frame = CGRectMake(0, 0, 44, 44);
+//    [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+//    [bar setLeftButton:button];
+//    UIButton * button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button2.frame = CGRectMake(0, 0, 44, 44);
+//    [button2 setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+//    UIButton * button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button3.frame = CGRectMake(0, 0, 44, 44);
+//    [button3 setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+//
+//    [bar setRightButtons:@[button2,button3]];
+//    
+//    [self.view addSubview:bar];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -62,5 +105,7 @@
     [self.markView stopAnimation];
     [self.flashView stopFlashAnimation];
 }
+
+
 
 @end

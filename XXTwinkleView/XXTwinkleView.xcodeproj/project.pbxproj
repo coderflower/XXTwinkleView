@@ -20,6 +20,7 @@
 		041557481DAFA23E00EBC10F /* XXMarkTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */; };
 		0415574B1DAFA53000EBC10F /* UIView+XXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */; };
 		830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */; };
+		83950FF71DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 83950FF61DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXFrame.m"; sourceTree = "<group>"; };
 		830C67FD1DABF00A000A3A9A /* UIView+XXAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXAnimation.h"; sourceTree = "<group>"; };
 		830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXAnimation.m"; sourceTree = "<group>"; };
+		83950FF51DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XXCommonNavBar.h"; sourceTree = "<group>"; };
+		83950FF61DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XXCommonNavBar.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				0405CD8F1DABCD0A0002E07D /* LaunchScreen.storyboard */,
 				0405CD921DABCD0A0002E07D /* Info.plist */,
 				0405CD811DABCD0A0002E07D /* Supporting Files */,
+				83950FF51DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.h */,
+				83950FF61DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m */,
 			);
 			path = XXTwinkleView;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				0405CD891DABCD0A0002E07D /* ViewController.m in Sources */,
 				0405CD861DABCD0A0002E07D /* AppDelegate.m in Sources */,
 				0405CD831DABCD0A0002E07D /* main.m in Sources */,
+				83950FF71DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m in Sources */,
 				0405CDB71DABCD780002E07D /* XXTwinkleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
