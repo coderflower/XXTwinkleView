@@ -15,9 +15,9 @@
 		0405CD911DABCD0A0002E07D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0405CD8F1DABCD0A0002E07D /* LaunchScreen.storyboard */; };
 		0405CD9C1DABCD0B0002E07D /* XXTwinkleViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CD9B1DABCD0B0002E07D /* XXTwinkleViewTests.m */; };
 		0405CDA71DABCD0B0002E07D /* XXTwinkleViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDA61DABCD0B0002E07D /* XXTwinkleViewUITests.m */; };
-		0405CDB71DABCD780002E07D /* XXTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDB61DABCD780002E07D /* XXTwinkleView.m */; };
-		0405CDBA1DABCF540002E07D /* XXFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405CDB91DABCF540002E07D /* XXFlashView.m */; };
-		041557481DAFA23E00EBC10F /* XXMarkTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */; };
+		0406D49F1ECACA58009EFDED /* XXFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406D49A1ECACA58009EFDED /* XXFlashView.m */; };
+		0406D4A01ECACA58009EFDED /* XXMarkTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406D49C1ECACA58009EFDED /* XXMarkTwinkleView.m */; };
+		0406D4A11ECACA58009EFDED /* XXTwinkleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406D49E1ECACA58009EFDED /* XXTwinkleView.m */; };
 		0415574B1DAFA53000EBC10F /* UIView+XXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */; };
 		830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 830C67FE1DABF00A000A3A9A /* UIView+XXAnimation.m */; };
 		83950FF71DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 83950FF61DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m */; };
@@ -61,6 +61,12 @@
 		0405CDB61DABCD780002E07D /* XXTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTwinkleView.m; sourceTree = "<group>"; };
 		0405CDB81DABCF540002E07D /* XXFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXFlashView.h; sourceTree = "<group>"; };
 		0405CDB91DABCF540002E07D /* XXFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXFlashView.m; sourceTree = "<group>"; };
+		0406D4991ECACA58009EFDED /* XXFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXFlashView.h; sourceTree = "<group>"; };
+		0406D49A1ECACA58009EFDED /* XXFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXFlashView.m; sourceTree = "<group>"; };
+		0406D49B1ECACA58009EFDED /* XXMarkTwinkleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXMarkTwinkleView.h; sourceTree = "<group>"; };
+		0406D49C1ECACA58009EFDED /* XXMarkTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXMarkTwinkleView.m; sourceTree = "<group>"; };
+		0406D49D1ECACA58009EFDED /* XXTwinkleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTwinkleView.h; sourceTree = "<group>"; };
+		0406D49E1ECACA58009EFDED /* XXTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTwinkleView.m; sourceTree = "<group>"; };
 		041557461DAFA23D00EBC10F /* XXMarkTwinkleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXMarkTwinkleView.h; sourceTree = "<group>"; };
 		041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXMarkTwinkleView.m; sourceTree = "<group>"; };
 		041557491DAFA53000EBC10F /* UIView+XXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXFrame.h"; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 		0405CD801DABCD0A0002E07D /* XXTwinkleView */ = {
 			isa = PBXGroup;
 			children = (
+				0406D4971ECACA58009EFDED /* Classes */,
 				041557491DAFA53000EBC10F /* UIView+XXFrame.h */,
 				0415574A1DAFA53000EBC10F /* UIView+XXFrame.m */,
 				830C67FD1DABF00A000A3A9A /* UIView+XXAnimation.h */,
@@ -174,6 +181,27 @@
 				0405CDB91DABCF540002E07D /* XXFlashView.m */,
 				041557461DAFA23D00EBC10F /* XXMarkTwinkleView.h */,
 				041557471DAFA23D00EBC10F /* XXMarkTwinkleView.m */,
+			);
+			path = XXTwinkleView;
+			sourceTree = "<group>";
+		};
+		0406D4971ECACA58009EFDED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0406D4981ECACA58009EFDED /* XXTwinkleView */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0406D4981ECACA58009EFDED /* XXTwinkleView */ = {
+			isa = PBXGroup;
+			children = (
+				0406D4991ECACA58009EFDED /* XXFlashView.h */,
+				0406D49A1ECACA58009EFDED /* XXFlashView.m */,
+				0406D49B1ECACA58009EFDED /* XXMarkTwinkleView.h */,
+				0406D49C1ECACA58009EFDED /* XXMarkTwinkleView.m */,
+				0406D49D1ECACA58009EFDED /* XXTwinkleView.h */,
+				0406D49E1ECACA58009EFDED /* XXTwinkleView.m */,
 			);
 			path = XXTwinkleView;
 			sourceTree = "<group>";
@@ -311,15 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0405CDBA1DABCF540002E07D /* XXFlashView.m in Sources */,
-				041557481DAFA23E00EBC10F /* XXMarkTwinkleView.m in Sources */,
 				0415574B1DAFA53000EBC10F /* UIView+XXFrame.m in Sources */,
 				830C67FF1DABF00A000A3A9A /* UIView+XXAnimation.m in Sources */,
+				0406D4A01ECACA58009EFDED /* XXMarkTwinkleView.m in Sources */,
 				0405CD891DABCD0A0002E07D /* ViewController.m in Sources */,
+				0406D49F1ECACA58009EFDED /* XXFlashView.m in Sources */,
+				0406D4A11ECACA58009EFDED /* XXTwinkleView.m in Sources */,
 				0405CD861DABCD0A0002E07D /* AppDelegate.m in Sources */,
 				0405CD831DABCD0A0002E07D /* main.m in Sources */,
 				83950FF71DB3A4C200B2A428 /* UIViewController+XXCommonNavBar.m in Sources */,
-				0405CDB71DABCD780002E07D /* XXTwinkleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
